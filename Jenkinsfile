@@ -6,6 +6,15 @@ pipeline{
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/veeraboinaashok/Node_js_Project']])
             }
         }
+        stage('build maven')
+        stage('Build mvn'){
+            steps{
+             script{
+                 sh 'mvn clean package'
+             }   
+            }
+        }
+        stage('docker image build')
         stage('Build docker image'){
             steps{
              script{
