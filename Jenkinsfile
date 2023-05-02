@@ -4,7 +4,7 @@ pipeline{
         stage('checkout code'){
             steps{
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/veeraboinaashok/Node_js_Project']])
-            }
+            } )
         }
         stage('Build mvn'){
             steps{
